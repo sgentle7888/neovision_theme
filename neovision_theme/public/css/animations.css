@@ -1,0 +1,116 @@
+/* neovision_theme/public/css/animations.css */
+
+/* Quantum Entrance Animations */
+@keyframes quantumFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-5px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes neuralPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes hologramFlicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes dataStream {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Apply animations */
+.card,
+.form-card,
+.widget {
+  animation: quantumFadeIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.btn {
+  animation: neuralPulse 2s infinite ease-in-out;
+}
+
+.indicator-pill {
+  animation: hologramFlicker 3s infinite ease-in-out;
+}
+
+/* Stagger animation delays */
+.card:nth-child(1) {
+  animation-delay: 0ms;
+}
+.card:nth-child(2) {
+  animation-delay: 100ms;
+}
+.card:nth-child(3) {
+  animation-delay: 200ms;
+}
+.card:nth-child(4) {
+  animation-delay: 300ms;
+}
+.card:nth-child(5) {
+  animation-delay: 400ms;
+}
+
+/* Micro-interactions */
+.btn:active {
+  transform: scale(0.98);
+}
+
+.form-control:focus {
+  animation: neuralPulse 0.3s ease-out;
+}
+
+/* Loading spinner */
+.neo-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(99, 102, 241, 0.3);
+  border-top: 3px solid var(--neo-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

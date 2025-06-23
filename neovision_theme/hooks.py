@@ -21,6 +21,56 @@ app_license = "mit"
 # 	}
 # ]
 
+# Enhanced CSS and JS loading
+app_include_css = [
+    "/assets/neovision_theme/css/neovision.css",
+    "/assets/neovision_theme/css/dark-mode.css",
+    "/assets/neovision_theme/css/animations.css"
+]
+
+app_include_js = [
+    "/assets/neovision_theme/js/neovision.js",
+    "/assets/neovision_theme/js/theme-switcher.js",
+    "/assets/neovision_theme/js/particle-effects.js"
+]
+
+# Custom web pages
+web_include_css = [
+    "/assets/neovision_theme/css/neovision.css"
+]
+
+web_include_js = [
+    "/assets/neovision_theme/js/neovision.js"
+]
+
+# Website context
+website_context = {
+    "favicon": "/assets/neovision_theme/images/favicon.ico",
+    "splash_image": "/assets/neovision_theme/images/splash.png"
+}
+
+# Custom fixtures
+fixtures = [
+    {
+        "dt": "Website Settings", 
+        "filters": {"name": "Website Settings"}
+    }
+]
+
+# Jinja environment customization
+jenv = {
+    "methods": [
+        "neovision_theme.utils.get_theme_settings"
+    ]
+}
+
+# Scheduler events for theme analytics
+scheduler_events = {
+    "daily": [
+        "neovision_theme.tasks.update_theme_analytics"
+    ]
+}
+
 # Includes in <head>
 # ------------------
 
